@@ -1,0 +1,42 @@
+Options -MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 301: /index.html -> /  dan  /xxx.html -> /xxx/
+    RewriteCond %{THE_REQUEST} /index\.html [NC]
+    RewriteRule ^(.*)index\.html$ $1 [R=301,L,NE]
+    RewriteCond %{THE_REQUEST} \.html [NC]
+    RewriteRule ^(.*)\.html$ $1 [R=301,L,NE]
+
+    # Sajikan file .html saat diminta tanpa ekstensi
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^/]+)$ $1.html [L]
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json font/woff2
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

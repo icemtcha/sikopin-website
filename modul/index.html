@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul SIKOPIN - Fitur Pendataan, Pembayaran, Keuangan &amp; Lainnya</title>
+    <link rel="canonical" href="https://sikopin.com/modul/" />
+    <meta name="description" content="13 modul terintegrasi SIKOPIN: Pendataan, Pembayaran, My Qur'an, Budgeting, Keuangan, Inventaris, Kinerja, Monitoring, Smartcard, Tabungan, ZISWAF, SPMB." />
+    <meta name="theme-color" content="#3CC6E8" />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SIKOPIN" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Modul Sikopin" />
+    <meta property="og:description" content="Aplikasi manajemen keuangan dan administrasi sekolah, kelola semua dalam satu dashboard." />
+    <meta property="og:url" content="https://sikopin.com/modul/" />
+    <meta property="og:image" content="https://sikopin.com/assets/sampulweb.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modul Sikopin" />
+    <meta name="twitter:description" content="Aplikasi manajemen keuangan dan administrasi sekolah, kelola semua dalam satu dashboard." />
+    <meta name="twitter:image" content="https://sikopin.com/assets/sampulweb.png" />
+    <link rel="stylesheet" href="/src/fonts/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/dist/style.min.css" />
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 transition-all">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="../index.html" class="flex-shrink-0">
+          <img src="../assets/logosikopin-hitam.png" alt="SIKOPIN" class="h-10 md:h-12" />
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+          <a href="../index.html" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Home</a>
+          <a href="../tentang-kami/" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Tentang Kami</a>
+          <a href="../modul/" class="text-[#3CC6E8] font-semibold">Modul</a>
+          <a href="../panduan/" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Panduan/Tutorial</a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="https://wa.me/6289694977377?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="bg-[#3CC6E8] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#2ab4d6] transition-all shadow-md hover:shadow-lg shadow-[#3CC6E8]/30">
+            Hubungi kami
+          </a>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden text-gray-600 hover:text-[#3CC6E8] transition-colors" aria-label="Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pt-2 pb-6">
+        <a href="../index.html" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Home</a>
+        <a href="../tentang-kami/" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Tentang Kami</a>
+        <a href="../modul/" class="block py-3 text-[#3CC6E8] font-semibold border-b border-gray-100">Modul</a>
+        <a href="../panduan/" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Panduan/Tutorial</a>
+        <a href="https://wa.me/6289694977377?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="mt-4 block bg-[#3CC6E8] text-white text-center px-6 py-2.5 rounded-full font-medium">Hubungi kami</a>
+      </div>
+    </nav>
+
+    <header class="pt-28 pb-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="hero-grid-card relative bg-[#3CC6E8] rounded-3xl py-14 text-center shadow-sm overflow-hidden">
+            <h1 class="relative z-10 text-4xl lg:text-5xl font-bold text-gray-900">Modul SIKOPIN</h1>
+          </div>
+        </div>
+      </header>
+
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 divide-y divide-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-left">Daftar Modul SIKOPIN</h2>
+            
+            <!-- Pendataan -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/kesiswaan.png" alt="Modul Pendataan" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Pendataan</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-pendataan/pendataan-beranda-1024x487.png" alt="Screenshot beranda Modul Pendataan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pendataan/pendataan-input-identitas-siswa-1024x487.png" alt="Screenshot input identitas siswa Modul Pendataan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pendataan/pendataan-input-pegawai-1024x487.png" alt="Screenshot input pegawai Modul Pendataan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pendataan/pendataan-input-siswa-1024x487.png" alt="Screenshot input siswa Modul Pendataan SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pembayaran -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/pembayaran.png" alt="Modul Pembayaran" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Pembayaran</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-pembayaran/pembayaran-beranda-1024x487.png" alt="Screenshot beranda Modul Pembayaran SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pembayaran/pembayaran-rekap-per-siswa-1024x487.png" alt="Screenshot rekap per siswa Modul Pembayaran SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pembayaran/pembayaran-rekap-per-tanggal-1024x487.png" alt="Screenshot rekap per tanggal Modul Pembayaran SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-pembayaran/pembayaran-transaksi-1024x487.png" alt="Screenshot transaksi Modul Pembayaran SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Akademik -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/myquran.png" alt="Modul my Qur'an" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul My Qur'an</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-akademik/beranda-akademik.jpeg" alt="Screenshot beranda Modul Akademik SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-akademik/laporan-akademik.jpeg" alt="Screenshot laporan Modul Akademik SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-akademik/penilaian-akademik.jpeg" alt="Screenshot penilaian Modul Akademik SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-akademik/target-akademik.jpeg" alt="Screenshot target Modul Akademik SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- APBS -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/budgeting.png" alt="Modul Budgeting" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Budgeting</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-apbs/screely-1733757216447-1024x468.png" alt="Screenshot beranda Modul APBS SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-apbs/screely-1733757354050-1024x468.png" alt="Screenshot input anggaran Modul APBS SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-apbs/screely-1733757441620-1024x468.png" alt="Screenshot rekap anggaran Modul APBS SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-apbs/screely-1733757487424-1024x468.png" alt="Screenshot laporan Modul APBS SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keuangan -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/keuangan.png" alt="Modul Keuangan" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Keuangan</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-keuangan/keuangan-beranda-1024x487.png" alt="Screenshot beranda Modul Keuangan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-keuangan/keuangan-jurnal-1024x487.png" alt="Screenshot jurnal Modul Keuangan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-keuangan/keuangan-transaksi-penerimaan-1024x487.png" alt="Screenshot transaksi penerimaan Modul Keuangan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-keuangan/keuangan-transaksi-pengeluaran-1024x487.png" alt="Screenshot transaksi pengeluaran Modul Keuangan SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPMB -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/spmb.png" alt="Modul Keuangan" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul SPMB</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-spmb/spmb-beranda.png" alt="Screenshot beranda Modul spmb SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-spmb/spmb-siswa.png" alt="Screenshot data calon Modul spmb SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-spmb/spmb-pembayaran.png" alt="Screenshot pembayaran Modul Keuangan SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventaris -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/inventaris.png" alt="Modul Inventaris" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Inventaris</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-inventaris/inventaris-beranda-1024x487.png" alt="Screenshot beranda Modul Inventaris SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-inventaris/inventaris-data-aset-1024x487.png" alt="Screenshot data aset Modul Inventaris SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-inventaris/inventaris-riwayat-aset-1024x487.png" alt="Screenshot riwayat aset Modul Inventaris SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-inventaris/inventaris-tambah-aset-1024x487.png" alt="Screenshot tambah aset Modul Inventaris SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kinerja -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/kinerja.png" alt="Modul Kinerja" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Kinerja</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-kinerja/beranda-kinerja.png" alt="Screenshot beranda Modul Kinerja SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-kinerja/data-pegawai.png" alt="Screenshot data pegawai Modul Kinerja SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-kinerja/data-fungsi.png" alt="Screenshot data funsi Modul Kinerja SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/monitoring.png" alt="Modul Monitoring" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Monitoring</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-monitoring/monitoring.png" alt="Screenshot Modul Monitoring SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komunikasi -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/komunikasi.png" alt="Modul Komunikasi" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Komunikasi</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-komunikasi/screely-1734301179304-1024x468.png" alt="Screenshot Modul Komunikasi SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Smartcard -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/smartcard.png" alt="Modul Smartcard" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Smartcard</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-smartcard/beranda.png" alt="Screenshot beranda Modul Smartcard SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-smartcard/cek-saldo.png" alt="Screenshot cek saldo Modul Smartcard SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-smartcard/transaksi.png" alt="Screenshot transaksi Modul Smartcard SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabungan -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/tabungan.png" alt="Modul Tabungan" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul Tabungan</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-tabungan/tabungan-beranda-1024x487.png" alt="Screenshot beranda Modul Tabungan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-tabungan/tabungan-laporan-1024x487.png" alt="Screenshot laporan Modul Tabungan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-tabungan/tabungan-rekap-1024x487.png" alt="Screenshot rekap Modul Tabungan SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-tabungan/tabungan-transaksi-1024x487.png" alt="Screenshot transaksi Modul Tabungan SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZISWAF -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/ziswaf.png" alt="Modul ZISWAF" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">Modul ZISWAF</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/modul-ziswaf/ziswaf-beranda-1024x487.png" alt="Screenshot beranda Modul ZISWAF SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-ziswaf/ziswaf-input-pendapatan-1024x487.png" alt="Screenshot input pendapatan Modul ZISWAF SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-ziswaf/ziswaf-rekap-pendapatan-1024x487.png" alt="Screenshot rekap pendapatan Modul ZISWAF SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/modul-ziswaf/ziswaf-rekap-pengeluaran-1024x487.png" alt="Screenshot rekap pengeluaran Modul ZISWAF SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+            <!-- SPMB -->
+            <div class="accordion-item">
+                <button class="accordion-header w-full flex items-center justify-between py-5 transition text-left group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#3CC6E8]/10 flex-shrink-0">
+                            <img src="../assets/logo/spmb.png" alt="SPMB Online" class="w-6 h-6 object-contain">
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3CC6E8] transition">SPMB Online </h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="bi bi-chevron-down text-gray-400 text-lg transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-400">
+                    <div class="max-w-4xl mx-auto p-5 pt-0 grid grid-cols-1 gap-4">
+                        <img src="../assets/spmb-online/spmb1.png" alt="Screenshot Modul SPMB Online SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/spmb-online/spmb2.png" alt="Screenshot Modul SPMB Online SIKOPIN" class="w-full rounded-xl">
+                        <img src="../assets/spmb-online/spmb3.png" alt="Screenshot Modul SPMB Online SIKOPIN" class="w-full rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 pt-14 pb-8 font-sans border-t border-gray-800">
+      <div class="w-[85%] max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+
+          <div class="text-left">
+            <h4 class="text-white font-bold mb-5 text-sm uppercase tracking-wider">Hubungi Kami</h4>
+            <div class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+              <a href="mailto:info@sikopin.com" class="flex items-center gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                <i class="bi bi-envelope text-base"></i>
+                <span>info@sikopin.com</span>
+              </a>
+              <a href="https://wa.me/6289694977377" class="flex items-center gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                <i class="bi bi-telephone text-base"></i>
+                <span>+62 89694977377</span>
+              </a>
+              <a href="https://maps.app.goo.gl/gSCmoZ2s2vzgqaMQ6" target="_blank" rel="noopener" class="flex items-start gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                <i class="bi bi-geo-alt text-base mt-0.5"></i>
+                <span class="leading-relaxed text-left max-w-xs block">Jl. Tusam Raya No.20c, Pedalangan,<br />Kec. Banyumanik, Kota Semarang,<br />Jawa Tengah 50268.</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center gap-6">
+            <img src="../assets/logo-sikopin.png" alt="Sikopin Logo" class="h-14 md:h-16 object-contain" />
+            <div class="flex items-center gap-3">
+              <a href="https://www.facebook.com/sikopin.225" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/sikopin.info" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@sikopin" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                <i class="bi bi-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
+          <p>&copy; 2026 Sikopin. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('i');
+                const isOpen = item.classList.contains('active');
+
+                if (isOpen) {
+                    item.classList.remove('active');
+                    content.style.maxHeight = '0';
+                    icon.classList.remove('rotate-180');
+                } else {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        document.querySelectorAll('.accordion-content img').forEach(img => {
+            img.addEventListener('load', () => {
+                const content = img.closest('.accordion-content');
+                if (content.closest('.accordion-item').classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+    <script src="../script.js"></script>
+</body>
+</html>

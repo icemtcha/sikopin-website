@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIKOPIN - Aplikasi Manajemen Keuangan &amp; Administrasi Sekolah</title>
+    <link rel="canonical" href="https://sikopin.com/" />
+    <link rel="stylesheet" href="/src/fonts/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/dist/style.min.css" />
+    <meta name="description" content="Kelola keuangan, pembayaran SPP, pendataan siswa, tabungan, inventaris, dan laporan sekolah dalam satu dashboard terintegrasi. Gratis demo!" />
+    <meta name="theme-color" content="#3CC6E8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SIKOPIN" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="SIKOPIN" />
+    <meta property="og:description" content="Aplikasi manajemen keuangan dan administrasi sekolah, kelola semua dalam satu dashboard." />
+    <meta property="og:url" content="https://sikopin.com/" />
+    <meta property="og:image" content="https://sikopin.com/assets/sampulweb.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SIKOPIN" />
+    <meta name="twitter:description" content="Aplikasi manajemen keuangan dan administrasi sekolah, kelola semua dalam satu dashboard." />
+    <meta name="twitter:image" content="https://sikopin.com/assets/sampulweb.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SIKOPIN",
+      "url": "https://sikopin.com",
+      "logo": "https://sikopin.com/assets/logo-sikopin.png",
+      "description": "Aplikasi manajemen keuangan dan administrasi sekolah terintegrasi",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Tusam Raya No.20c, Pedalangan",
+        "addressLocality": "Semarang",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "50268",
+        "addressCountry": "ID"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-896-9497-7377",
+        "contactType": "customer service",
+        "email": "info@sikopin.com"
+      },
+      "sameAs": [
+        "https://www.instagram.com/sikopin.info",
+        "https://www.facebook.com/sikopin.225",
+        "https://www.youtube.com/@sikopin"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 transition-all">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="index.html" class="flex-shrink-0">
+          <img src="assets/logosikopin-hitam.png" alt="SIKOPIN" class="h-10 md:h-12" />
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+          <a href="index.html" class="text-[#3CC6E8] font-semibold">Home</a>
+          <a href="tentang-kami/" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Tentang Kami</a>
+          <a href="modul/" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Modul</a>
+          <a href="panduan/" class="text-gray-600 hover:text-[#3CC6E8] transition-colors">Panduan/Tutorial</a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="https://wa.me/6289694977377?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="bg-[#3CC6E8] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#2ab4d6] transition-all shadow-md hover:shadow-lg shadow-[#3CC6E8]/30">
+            Hubungi kami
+          </a>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden text-gray-600 hover:text-[#3CC6E8] transition-colors" aria-label="Menu">
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pt-2 pb-6">
+        <a href="index.html" class="block py-3 text-[#3CC6E8] font-semibold border-b border-gray-100">Home</a>
+        <a href="tentang-kami/" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Tentang Kami</a>
+        <a href="modul/" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Modul</a>
+        <a href="panduan/" class="block py-3 text-gray-700 font-medium border-b border-gray-100">Panduan/Tutorial</a>
+        <a href="https://wa.me/6289694977377?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="mt-4 block bg-[#3CC6E8] text-white text-center px-6 py-2.5 rounded-full font-medium">Hubungi kami</a>
+      </div>
+    </nav>
+
+    <!-- header -->
+    <header
+      class="hero-grid relative flex flex-col items-center justify-center pt-20 min-h-screen bg-[#3CC6E8] text-center"
+    >
+      <div class="max-w-5xl space-y-8 relative z-10">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+          Solusi Manajemen Keuangan<br />Dengan
+          <span class="border-b-4 border-white">SIKOPIN</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto">
+          Sistem informasi sekolah terintegrasi yang
+          membantu yayasan dan sekolah mengelola keuangan
+          hingga pelaporan secara digital dalam satu dashboard.
+        </p>
+        <a
+          href="https://wa.me/6282229922440?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener"
+          class="inline-block bg-white text-[#3CC6E8] px-10 py-4 text-lg rounded-full font-medium hover:bg-gray-100 transition shadow-lg shadow-blue-400/30"
+          >Jadwalkan Demo Gratis</a
+        >
+      </div>
+    </header>
+
+    <!-- section 1 -->
+    <section class="py-16 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-4">
+          <span
+            class="inline-block border border-[#3CC6E8] text-[#3CC6E8] px-4 py-1 rounded-full text-sm font-medium uppercase tracking-wider"
+            >Layanan</span
+          >
+        </div>
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center leading-tight mb-10 max-w-4xl mx-auto"
+        >
+          Jalankan Semua Operasional Lembaga<br class="hidden md:block" />
+          Pendidikan Anda di dalam Satu Dashboard
+        </h2>
+        <p class="text-center mb-10 max-w-3xl mx-auto text-gray-600">
+          Kelola semua kebutuhan administrasi lembaga pendidikan Anda, mulai dari pendataan
+          siswa, pembayaran, tabungan, inventaris, hingga laporan keuangan, secara
+          terpusat, aman, dan dapat diakses kapan saja.
+        </p>
+        <img
+          src="assets/device1.png"
+          alt="Dashboard SIKOPIN"
+          class="w-full max-w-4xl mx-auto"
+        />
+      </div>
+    </section>
+
+    <!-- section 2 -->
+    <section class="py-12 bg-white">
+      <div class="w-[92%] md:w-[85%] max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div
+            class="bg-[#3CC6E8] rounded-2xl shadow-xl p-8 md:p-10 text-white flex flex-col justify-center"
+          >
+            <h2 class="text-3xl font-bold text-center mb-8">Modul Sikopin</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/kesiswaan.png"
+                    alt="Kesiswaan"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Pendataan</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/pembayaran.png"
+                    alt="Pembayaran"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Pembayaran</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/myquran.png"
+                    alt="My Qur'an"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">My Qur'an</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/budgeting.png"
+                    alt="Budgeting"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Budgeting</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/keuangan.png"
+                    alt="Keuangan"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Keuangan</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/inventaris.png"
+                    alt="Inventaris"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Inventaris</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/komunikasi.png"
+                    alt="Komunikasi"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Komunikasi</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/spmb.png"
+                    alt="spmb"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">SPMB</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/smartcard.png"
+                    alt="Smartcard"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Smartcard</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/tabungan.png"
+                    alt="Tabungan"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Tabungan</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/ziswaf.png"
+                    alt="ZISWAF"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">ZISWAF</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/monitoring.png"
+                    alt="Monitoring"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Monitoring</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-11 h-11 flex items-center justify-center rounded-full bg-white flex-shrink-0"
+                >
+                  <img
+                    src="assets/logo/kinerja.png"
+                    alt="Kinerja"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <span class="text-xl font-semibold">Kinerja</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#3CC6E8] rounded-2xl shadow-xl p-8 md:p-10 text-white flex flex-col md:flex-row items-center gap-8 justify-center"
+          >
+            <img
+              src="assets/sikopin-app/beranda-app.png"
+              alt="Aplikasi SIKOPIN"
+              class="w-full max-w-[200px] rounded-xl flex-shrink-0 drop-shadow-md"
+            />
+
+            <div
+              class="text-center md:text-left flex flex-col items-center md:items-start"
+            >
+              <h2 class="text-3xl font-bold mb-4">Download Aplikasi SIKOPIN</h2>
+              <ul class="space-y-3 mb-6 text-white/90 text-left text-lg">
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-white mt-0.5"></i>
+                  <span>Bayar tagihan kapan saja</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-white mt-0.5"></i>
+                  <span>Riwayat pembayaran lengkap</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-white mt-0.5"></i>
+                  <span>Pantau hafalan anak</span>
+                </li>
+              </ul>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.sikopin.id&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src="assets/google-play.png"
+                  alt="Download di Google Play"
+                  class="h-14 object-contain"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 3 -->
+    <section class="py-16 md:py-24 bg-gray-50/50">
+      <div class="max-w-[92%] md:max-w-[84%] mx-auto">
+        
+        <div class="text-center mb-14 md:mb-20">
+          <span class="inline-block border border-[#3CC6E8] text-[#3CC6E8] px-4 py-1 rounded-full text-sm font-medium uppercase tracking-wider mb-4">
+            Permasalahan
+          </span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Tantangan yang Dihadapi <br class="hidden md:block" />
+            Lembaga Pendidikan
+          </h2>
+        </div>
+    
+        <div class="bg-gray-200 rounded-3xl overflow-hidden shadow-sm border border-gray-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]">
+            
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-folder-x text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Data Tidak Tertata</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Pengelolaan data siswa dan SDM belum tertata baik dan rapi.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-search text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Pencarian Data Lambat</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Pencarian data pembayaran yang tidak bisa dilakukan dengan cepat.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-graph-down-arrow text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Target Tidak Tercapai</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Target pendapatan yang sering tidak tercapai karena kurangnya kontrol.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-wallet2 text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Tanpa Kontrol Keuangan</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Belum adanya sistem kontrol keuangan yang terstruktur.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-calculator text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Anggaran Sulit Diukur</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Kesulitan membuat perencanaan anggaran yang terukur.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-file-earmark-bar-graph text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Laporan Tak Terpakai</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Kesulitan menggunakan laporan keuangan untuk rencana pengembangan.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-box-seam text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Aset Tidak Terkontrol</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Kesulitan mengelola aset dan banyak yang hilang tanpa kontrol.</p>
+            </div>
+    
+            <div class="bg-white p-8 md:p-10 h-full hover:bg-gray-50/50 transition-colors duration-300 cursor-default">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3CC6E8]/10 mb-6">
+                <i class="bi bi-speedometer2 text-[#3CC6E8] text-xl"></i>
+              </div>
+              <h3 class="text-[17px] font-bold text-gray-900 mb-3">Kinerja Tak Terukur</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Belum adanya penilaian kinerja terstruktur untuk benefit dan karir.</p>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
+    
+
+        <!-- section 4 -->
+        <section class="py-16 bg-white">
+          <div class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2">
+              <img src="assets/poster.jpg" alt="SIKOPIN" class="w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 rounded-2xl shadow-lg">
+              <div class="text-center mt-6">
+                <a href="https://wa.me/6282229922440?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="inline-block bg-[#3CC6E8] text-white px-8 py-3 rounded-full font-medium hover:bg-[#35b3d1] transition shadow-lg">Coba Demo Aplikasi Gratis</a>
+              </div>
+            </div>
+            <div class="lg:w-1/2 space-y-6">
+              <div>
+                <span class="inline-block border border-[#3CC6E8] text-[#3CC6E8] px-5 py-1.5 rounded-full text-base font-medium uppercase tracking-wider mb-3">Kenapa SIKOPIN?</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-snug mt-3">Solusi Tepat untuk Manajemen Sekolah Modern</h2>
+              </div>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-[#3CC6E8] text-xl mt-0.5 flex-shrink-0"></i>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-lg">Integrasi</h4>
+                    <p class="text-base text-gray-600">Setiap modul saling terkoneksi untuk sistem manajemen yang terintegrasi.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-[#3CC6E8] text-xl mt-0.5 flex-shrink-0"></i>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-lg">Multi Pengguna</h4>
+                    <p class="text-base text-gray-600">Dapat digunakan untuk multi unit (TK, SD, SMP, SMA) secara bersamaan.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-[#3CC6E8] text-xl mt-0.5 flex-shrink-0"></i>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-lg">ISAK 35</h4>
+                    <p class="text-base text-gray-600">Laporan keuangan sesuai standar akuntansi yang berlaku (ISAK 35).</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-[#3CC6E8] text-xl mt-0.5 flex-shrink-0"></i>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-lg">Berbasis Cloud</h4>
+                    <p class="text-base text-gray-600">Data dan laporan keuangan dapat diakses real time 24 jam.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="bi bi-check-circle-fill text-[#3CC6E8] text-xl mt-0.5 flex-shrink-0"></i>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 text-lg">Pendampingan</h4>
+                    <p class="text-base text-gray-600">Pendampingan pemakaian aplikasi untuk memudahkan pengelolaan keuangan.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- section 5 -->
+    <section class="bg-gray-50/50 py-16">
+
+      <div class="mb-16">
+        <div class="text-center mb-12">
+          <span class="inline-block border border-[#3CC6E8] text-[#3CC6E8] px-5 py-1.5 rounded-full text-base font-medium uppercase tracking-wider">
+            Mitra Kami
+          </span>
+        </div>
+        <div
+          class="relative overflow-hidden w-full max-w-7xl mx-auto"
+          style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);"
+        >
+          <div id="marqueeTrack" class="flex w-max gap-16 md:gap-20 items-center opacity-70 hover:opacity-100 transition-opacity duration-300 pr-16 md:pr-20">
+            <img src="assets/sekolah/binainsani.png" alt="Bina Insani" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/cahayaummat.webp" alt="Cahaya Ummat" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/sd-islam-cahaya-ilmu.jpg" alt="SD Islam Cahaya Ilmu" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/sdinsanmulia.png" alt="SD Insan Mulia" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/sdit-nurul-iman.png" alt="SDIT Nurul Iman" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/sdit-permata-bunda.jpg" alt="SDIT Permata Bunda" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/sma-it-al-huda-wonogiri.jpg" alt="SMA IT Al Huda Wonogiri" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/smpit-az-zahra-sragen.jpg" alt="SMPIT Az Zahra Sragen" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/smpit-darul-fikri-bawen.jpg" alt="SMPIT Darul Fikri Bawen" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/smpit-Insan-Kamil.jpg" alt="SMPIT Insan Kamil" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/tk-islam-cahaya-ilmu.jpg" alt="TK Islam Cahaya Ilmu" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/tkit-az-zahra-sragen.png" alt="TKIT Az Zahra Sragen" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/tpa-permata-bunda.jpg" alt="TPA Permata Bunda" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/Yayasan-Bina-Insan-Taqwa.jpg" alt="Yayasan Bina Insan Taqwa" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="assets/sekolah/yayasan-darul-fikri-bawen.jpg" alt="Yayasan Darul Fikri Bawen" class="h-16 md:h-20 object-contain flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300" />
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Apa Kata Mereka Tentang Sikopin?
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">Dengarkan langsung pengalaman nyata dari pengurus yayasan yang telah bertransformasi bersama kami.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <div class="text-[#3CC6E8]/30 mb-6">
+              <svg width="40" height="40" viewBox="0 0 32 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2222 24L14.2222 13.3333C14.2222 6 18.0001 1.33333 25.5556 0L27.8889 2.66667C22.5556 4 20.2222 7 20.2222 12V13.3333H25.5556V24H14.2222ZM0 24L0 13.3333C0 6 3.77778 1.33333 11.3333 0L13.6667 2.66667C8.33333 4 6 7 6 12V13.3333H11.3333V24H0Z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Yayasan Al Huda Wonogiri</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+              "Yayasan yang sudah berusia kurang lebih 20 tahun, awal mulanya unit sekolah kami berdiri sendiri-sendiri, setelah kami bertemu dengan Sikopin, kami mendapatkan arahan terkait sentralisasi dan ternyata efeknya luar biasa sekali. Sekolah-sekolah tumbuh signifikan."
+            </p>
+            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+              <img src="assets/pak-ito-alhuda2.jpg" alt="Bp. Suwito" class="w-14 h-14 rounded-full object-cover border-2 border-[#3CC6E8]/20" />
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">Bp. Suwito</h4>
+                <p class="text-xs text-[#3CC6E8] font-semibold mt-1">Ketua Yayasan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <div class="text-[#3CC6E8]/30 mb-6">
+              <svg width="40" height="40" viewBox="0 0 32 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2222 24L14.2222 13.3333C14.2222 6 18.0001 1.33333 25.5556 0L27.8889 2.66667C22.5556 4 20.2222 7 20.2222 12V13.3333H25.5556V24H14.2222ZM0 24L0 13.3333C0 6 3.77778 1.33333 11.3333 0L13.6667 2.66667C8.33333 4 6 7 6 12V13.3333H11.3333V24H0Z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Yayasan Samudra Ilmu</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+              "Alhamdulillah dengan adanya Sikopin, kami sangat terbantu memanajemen keuangan lembaga sehingga bisa memiliki proyeksi untuk pengembangan lembaga kami, baik untuk sarana prasarana, membeli lahan baru, ataupun membuka unit SMP dan SMA."
+            </p>
+            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+              <img src="assets/bu-ida-ci2.jpg" alt="Bu Ida" class="w-14 h-14 rounded-full object-cover border-2 border-[#3CC6E8]/20" />
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">Bu Ida</h4>
+                <p class="text-xs text-[#3CC6E8] font-semibold mt-1">Bendahara Yayasan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <div class="text-[#3CC6E8]/30 mb-6">
+              <svg width="40" height="40" viewBox="0 0 32 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2222 24L14.2222 13.3333C14.2222 6 18.0001 1.33333 25.5556 0L27.8889 2.66667C22.5556 4 20.2222 7 20.2222 12V13.3333H25.5556V24H14.2222ZM0 24L0 13.3333C0 6 3.77778 1.33333 11.3333 0L13.6667 2.66667C8.33333 4 6 7 6 12V13.3333H11.3333V24H0Z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Yayasan Darul Fikri</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+              "Sikopin banyak sekali bantu kita keluar dari semua permasalahan yang ada di yayasan. Ini sudah tahun ke-4 memakai Sikopin, kita lebih profesional, transparan, dan lebih cepat untuk mendapatkan data keuangan walaupun posisi saya ada di luar kota."
+            </p>
+            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+              <img src="assets/bu-ngatiah-perbun.jpg" alt="Bu Ngatiah" class="w-14 h-14 rounded-full object-cover border-2 border-[#3CC6E8]/20" />
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">Bu Ngatiah</h4>
+                <p class="text-xs text-[#3CC6E8] font-semibold mt-1">Bendahara Yayasan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-16">
+          <div class="bg-white rounded-3xl border border-gray-100 shadow-sm py-10 px-8 flex flex-col md:flex-row justify-evenly items-center gap-12">
+            <div class="text-center flex flex-col items-center">
+              <h3 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-2">2020</h3>
+              <p class="text-gray-500 font-medium text-sm md:text-base uppercase tracking-wider">Sikopin Berdiri</p>
+            </div>
+
+            <div class="hidden md:block w-px h-16 bg-gray-200"></div>
+
+            <div class="text-center flex flex-col items-center">
+              <h3 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-2">13</h3>
+              <p class="text-gray-500 font-medium text-sm md:text-base uppercase tracking-wider">Modul</p>
+            </div>
+
+            <div class="hidden md:block w-px h-16 bg-gray-200"></div>
+
+            <div class="text-center flex flex-col items-center">
+              <h3 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-2">40K+</h3>
+              <p class="text-gray-500 font-medium text-sm md:text-base uppercase tracking-wider">User Aktif</p>
+            </div>
+
+            <div class="hidden md:block w-px h-16 bg-gray-200"></div>
+
+            <div class="text-center flex flex-col items-center">
+              <h3 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-2">250+</h3>
+              <p class="text-gray-500 font-medium text-sm md:text-base uppercase tracking-wider">Sekolah Terdaftar</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 6 -->
+    <section class="py-10 bg-white">
+      <div class="w-[92%] md:w-[85%] max-w-[90rem] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+    
+          <div class="md:col-span-1 bg-gray-900 rounded-3xl p-6 lg:p-8 flex flex-col items-center md:items-start justify-center gap-5 shadow-sm">
+            <a href="https://www.instagram.com/sikopin.info" class="flex items-center gap-4 text-2xl font-medium text-gray-300 hover:text-[#3CC6E8] transition-colors duration-300 w-full max-w-[15rem] whitespace-nowrap">
+              <span class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400">
+                <i class="bi bi-instagram text-2xl"></i>
+              </span>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/sikopin.225" class="flex items-center gap-4 text-2xl font-medium text-gray-300 hover:text-[#3CC6E8] transition-colors duration-300 w-full max-w-[15rem] whitespace-nowrap">
+              <span class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400">
+                <i class="bi bi-facebook text-2xl"></i>
+              </span>
+              Facebook
+            </a>
+            <a href="https://www.youtube.com/@sikopin" class="flex items-center gap-4 text-2xl font-medium text-gray-300 hover:text-[#3CC6E8] transition-colors duration-300 w-full max-w-[15rem] whitespace-nowrap">
+              <span class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400">
+                <i class="bi bi-youtube text-2xl"></i>
+              </span>
+              YouTube
+            </a>
+          </div>
+    
+          <div class="md:col-span-3 bg-gray-900 rounded-3xl px-8 py-8 sm:px-10 lg:px-12 lg:py-10 flex flex-col shadow-sm">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white text-left leading-[1.4] lg:leading-[1.5] lg:max-w-2xl">
+                Kelola Keuangan Sekolah Dengan Mudah Bersama SIKOPIN
+              </h2>
+              <a href="https://wa.me/6282229922440?text=Assalamualaikum.%20Saya%20ingin%20menanyakan%20terkait%20aplikasi%20Sikopin." target="_blank" rel="noopener" class="inline-flex shrink-0 items-center gap-2 bg-white text-gray-900 font-semibold px-6 sm:px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap">
+                Jadwalkan Demo Gratis
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+<!-- Footer -->
+        <footer class="bg-gray-900 pt-14 pb-8 font-sans border-t border-gray-800">
+          <div class="w-[85%] max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+
+              <div class="text-left">
+                <h4 class="text-white font-bold mb-5 text-sm uppercase tracking-wider">Hubungi Kami</h4>
+                <div class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+                  <a href="mailto:info@sikopin.com" class="flex items-center gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                    <i class="bi bi-envelope text-base"></i>
+                    <span>info@sikopin.com</span>
+                  </a>
+                  <a href="https://wa.me/6289694977377" class="flex items-center gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                    <i class="bi bi-telephone text-base"></i>
+                    <span>+62 89694977377</span>
+                  </a>
+                  <a href="https://maps.app.goo.gl/gSCmoZ2s2vzgqaMQ6" target="_blank" rel="noopener" class="flex items-start gap-3 hover:text-[#3CC6E8] transition-colors duration-300">
+                    <i class="bi bi-geo-alt text-base mt-0.5"></i>
+                    <span class="leading-relaxed text-left max-w-xs block">Jl. Tusam Raya No.20c, Pedalangan,<br />Kec. Banyumanik, Kota Semarang,<br />Jawa Tengah 50268.</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-6">
+                <img src="assets/logo-sikopin.png" alt="Sikopin Logo" class="h-14 md:h-16 object-contain" />
+                <div class="flex items-center gap-3">
+                  <a href="https://www.facebook.com/sikopin.225" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/sikopin.info" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="https://www.youtube.com/@sikopin" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#3CC6E8] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
+              <p>&copy; 2026 Sikopin. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.marquee-fade::before,
+.marquee-fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 10;
+    pointer-events: none;
+}
+.marquee-fade::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+.marquee-fade::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.hero-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, black 25%, transparent 60%);
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, black 25%, transparent 60%);
+}
+
+.hero-grid-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 80%);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 80%);
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sikopin.com/sitemap.xml
