@@ -4,7 +4,6 @@ Website landing page Sikopin menggunakan PHP Native dan Tailwind CSS.
 
 ## Tech Stack
 
-- PHP Native
 - Tailwind CSS 3
 - PostCSS
 - Autoprefixer
